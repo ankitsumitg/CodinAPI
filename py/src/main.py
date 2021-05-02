@@ -12,7 +12,7 @@ class CodinAPI:
         self.logged_in = False
         self.codin_user = None
         self.user_id = None
-        self.private_clash_url = 'https://www.codingame.com/clashofcode/clash/'
+        self.private_clash_url = None
 
     async def login(self, email, password):
         headers = {'Content-Type': 'application/json', 'Accept': '*/*'}
@@ -25,6 +25,7 @@ class CodinAPI:
         headers = {'Content-Type': 'application/json', 'Accept': '*/*'}
         data = [self.user_id, {'SHORT': True}, [], ["FASTEST", "SHORTEST", "REVERSE"]]
         r = self._session.post(Endpoints.createClash, json=data, headers=headers)
-        self.private_clash_url += r.json()['publicHandle']
+        self.private_clash_url = 'https://www.codingame.com/clashofcode/clash/' + r.json()['publicHandle']
+
     async def close(self):
         await self._session.close()
