@@ -1,7 +1,5 @@
 import asyncio
-import aiohttp
 import requests
-from json import dumps
 from .endpoints import Endpoints
 
 
@@ -28,4 +26,4 @@ class CodinAPI:
         self.private_clash_url = 'https://www.codingame.com/clashofcode/clash/' + r.json()['publicHandle']
 
     async def close(self):
-        await self._session.close()
+        self._session.close()
