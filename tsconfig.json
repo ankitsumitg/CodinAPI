@@ -1,0 +1,16 @@
+{
+	"display": "Node",
+	"include": ["src/**/*"],
+	"exclude": ["./tests/", "./node_modules/", "./dist/"],
+	"compilerOptions": {
+		"lib": ["es2020"],
+		"module": "commonjs",
+		"target": "es2020",
+		"outDir": "./dist/",
+		"declaration": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}
