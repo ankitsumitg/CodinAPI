@@ -1,3 +1,5 @@
 creds.json
 node_modules/
 dist/
+/**/.idea
+.idea
