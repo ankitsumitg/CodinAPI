@@ -15,7 +15,7 @@ user = CodinAPI()
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
-    # add your email and password
+    # add your email and password of codingame.
     await user.login('YOUR_EMAIL', 'YOUR_PASSWORD')
 
 
